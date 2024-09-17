@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Faturalandırma</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        @font-face {
+    font-family: 'Gotham';
+    src: url('fonts/gotham.woff2') format('woff2'),
+         url('fonts/gotham.woff') format('woff'),
+         url('fonts/gotham.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    font-family: 'Gotham', sans-serif;
+}
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-image: url('image/background.png');
+        }
+        
+           
+        
+
+        .navbar {
+            background: linear-gradient(45deg, white 25%, rgba(229, 38, 41, 1) 25%);
+            width: 100%;
+            height: 88px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+            border-radius: 20px 20px 0 0;
+            box-sizing: border-box;
+          
+
+        }
+
+
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: white;
+            display: flex;
+            align-items: center;
+            margin-left: 100px;
+        }
+
+        .logo img {
+            height: 50px;
+            margin-right: 10px;
+        }
+
+        .nav-links {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            flex-grow: 1;
+            justify-content: center;
+        }
+
+        .nav-links li {
+            margin: 0 20px;
+        }
+
+        .nav-links li a {
+            color: white;
+            text-decoration: none;
+            padding: 14px 20px;
+            display: inline-block;
+            border-radius: 4px;
+           
+        }
+
+        .nav-links li a:hover {
+            background-color: #d32f2f;
+        }
+        .dropdown {
+          position: relative;
+        }
+
+        .dropdown-content {
+           display: none;
+           position: absolute;
+           background-color:white;
+           box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+           padding: 10px;
+           z-index: 1;
+           width: 220px;
+           border-radius: 10px;
+        }
+
+        .dropdown-content li {
+           margin: 0;
+           padding: 0;
+           border-bottom: 1px solid #ddd;
+        }
+        .dropdown-content li:last-child {
+  border-bottom: none; /* Son öğenin altındaki çizgiyi kaldırır */
+}
+
+        .dropdown-content a {
+          color: black; /* Ensures dropdown text is black */
+          text-decoration: none;
+          display: block;
+          padding: 8px 16px;
+          
+          box-sizing: border-box;
+        }
+     
+   
+        .dropdown:hover .dropdown-content {
+          display: block;
+        }
+
+        .dropdown-content a:hover {
+          background-color: #b06464; /* Optional hover effect */
+        }
+
+        .round-button {
+            width: 45px;
+            height: 45px;
+            border: 2px solid #ffffff;
+            border-radius: 50%;
+            background-color: transparent;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            cursor: pointer;
+            margin-right: 20px;
+        }
+
+        .round-button i {
+            color: #ffffff;
+        }
+
+        .right-links {
+            display: flex;
+            align-items: center;
+        }
+
+        .right-links a {
+            margin-left: 10px;
+            color: white;
+            text-decoration: none;
+            padding: 14px 20px;
+            border: 2px solid #ffffff;
+            border-radius: 15px;
+            background-color: rgba(229, 38, 41, 1);
+            transition: background-color 0.3s;
+        }
+
+        .right-links a:hover {
+            background-color: #d32f2f;
+        }
+
+        .right-links a:last-child {
+            background-color: white;
+            color: rgba(229, 38, 41, 1);
+        }
+
+        .right-links a:last-child:hover {
+            background-color: #ffebee;
+        }
+        .yazi{
+            text-align: center;
+            font-size: 25px;
+            color: rgba(0, 0, 0, 1);
+        }
+        .yazi p{
+            font-size: 18px;
+        }
+        .red-button {
+            display: inline-block;
+            background-color:rgba(229, 38, 41, 1);
+            color: white;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 10px;
+            font-size: 18px;
+            font-weight: bold;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .red-button:hover {
+            background-color: #f00;
+            color: #fff;
+        }
+        .foto1{
+            display: flex;
+        }
+        .bir{
+            margin-left: 200px;
+            border-radius: 24px;
+        }
+        .text1 {
+            margin-left: 50px;
+            margin-top: 50px;
+        }
+        .text1 h3{
+            color:rgba(40, 40, 40, 1);
+            ;
+        }
+        .foto2{
+            display: flex;
+        }
+        .iki{
+            margin-left: 100px;
+            border-radius: 24px;
+        }
+        .text2{
+            margin-left: 220px;
+            margin-top: 50px;
+        }
+        .text3{
+            margin-left: 220px;
+            margin-top: 50px;
+            font-family: 'Gotham', sans-serif;
+            color: rgb(29, 28, 28);
+        }
+        footer {
+  background-color: #1e1e1e;
+  color: white;
+  padding: 20px 0;
+  font-family: Arial, sans-serif;
+  height: 80px;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 10px;
+}
+
+.left-section2 p {
+  margin: 0;
+  font-size: small;
+  margin-top: -30px;
+}
+.right-section2 p{
+    margin-left: 190px;
+    text-align: right;
+}
+
+.social-icons{
+    margin-top: 10px;
+}
+
+.social-icons a {
+  margin-right: 20px;
+  color: white;
+  font-size: 24px;
+  text-decoration: none;
+  
+}
+
+.social-icons a:hover {
+  color: #999;
+}
+
+.center-section a {
+  margin: 0 15px;
+  color: white;
+  text-decoration: none;
+}
+
+.center-section a:hover {
+  text-decoration: underline;
+}
+
+.right-section2 {
+  text-align: right;
+}
+
+.phone-number {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+
+    </style>
+</head>
+<body>
+    <div class="ilk">
+        <nav class="navbar">
+            <div class="logo">
+                <img src="image/logo.png" > 
+            </div>
+            <ul class="nav-links">
+                <li><a href="fatura.html">Ürünler</a></li>
+                <li><a href="#">Paketler</a></li>
+                <div class="dropdown">
+                    <li><a href="#">Blog</a></li>
+                    <div class="dropdown-content">
+                        <li><b><a href="blog.html" style="color: #000;">Blog</a></b></li>
+                        <li><b><a href="#" style="color: #000;">Videolar</a></b></li>
+                        <li><b><a href="#" style="color: #000;">Sıkça Sorulan Sorular</a></b></li>
+                    </div>
+                  </div>
+                <li><a href="#">Bize Ulaşın</a></li>
+            </ul>
+            <div class="right-links">
+                <button class="round-button">
+                    <i class="fas fa-search"></i>
+                </button>
+                <a href="#">Platforma Giriş</a>
+                <a href="#">Hemen Başvur</a>
+            </div>
+        </nav>
+        
+    </div><br><br>
+    <div class="yazi">
+      <h1>Faturalandırma</h1>
+      <p>Cari hesaplarınızı, stok hareketlerinizi, güncel kasa durumlarınızı gelen ve giden <br>
+        faturalarınızı izleyin. Stoklarınızı ve maliyetlerinizi takip edin ve kârlılığınızı koruyun. </p><br>
+        <a href="#" class="red-button">Hemen Başvur →</a>
+    </div>
+    <br><br><br><br>
+    <div class="foto1">
+        <img src="image/6.png" alt="Açıklama" width="530" height="377"  class="bir">
+       <div class="text1">
+         <h3>Lorem ipsum dolor sit amet</h3>
+         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p> Aliquam eu magna porta, vestibulum ex a, gravida diam. Donec </p><p> sagittis mauris, et tempus neque vehicula quis .Fusce</p><p> sodales vel tortor a lobortis. Integer faucibus felis vitae</p><p> neque rutrum faucibus. Pellentesque et congue eros, sed</p><p> sollicitudin dolor. Curabitur sit</p>
+       </div>
+
+    </div>
+
+    <br><br><br><br>
+    <div class="foto2">
+       <div class="text2">
+         <h3>Lorem ipsum dolor sit amet</h3>
+         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p> Aliquam eu magna porta, vestibulum ex a, gravida diam. Donec </p><p> sagittis mauris, et tempus neque vehicula quis .Fusce</p><p> sodales vel tortor a lobortis. Integer faucibus felis vitae</p><p> neque rutrum faucibus. Pellentesque et congue eros, sed</p><p> sollicitudin dolor. Curabitur sit</p>
+       </div>
+       <img src="image/7.png" alt="Açıklama" width="530" height="377"  class="iki">
+
+    </div><br><br><br>
+    <div class="text3">
+       <h3>Lorem ipsum dolor sit amet</h3>
+       <p>Mauris, et tempus neque vehicula quis. Fusce sodales vel tortor a lobortis. Integer faucibus felis vitae neque rutrum<br>faucibus. Pellentesque et congue eros, sed sollicitudin dolor. Curabitur sit amet interdum arcu, in sodales est. Cras hendrerit<br> nibh at enim efficitur, eget euismod massa porttitor. Quisque nulla dui, egestas sed fringilla convallis, pharetra nec urna.<br> Aliquam fringilla at nisl et posuere. Fusce et tortor sagittis, lobortis orci non, scelerisque augue.</p><br>
+       <p> Ut id laoreet orci, molestie tincidunt sem. Ut dictum est nibh, sit amet varius tortor tempor sed. Praesent congue, velit sit<br> amet eleifend congue, nulla dolor convallis justo, in facilisis mi dolor sed dui. Duis fringilla bibendum finibus. Etiam vitae<br> laoreet est, et porttitor metus. Vestibulum faucibus lacinia commodo. Duis nulla quam, pharetra ac libero eget, ornare <br> finibus quam. Nam lobortis, massa sit amet convallis mollis, est justo vehicula ipsum, bibendum laoreet leo felis at nisi. Ut<br> semper mauris sagittis velit porta volutpat. Donec ut porttitor mi, rutrum egestas ligula. Nam venenatis luctus sem. Etiam <br>tristique id ante condimentum maximus. Integer et purus dignissim, cursus velit eget, efficitur sapien.</p><br>
+       <h3 style="color:rgba(237, 28, 36, 1)">Lorem ipsum dolor sit amet</h3>
+       <p>Etiam tincidunt imperdiet placerat. In tempor sed sapien vitae ultrices. Integer nec quam nibh. Nullam metus tortor,<br> commodo vitae ligula eget, finibus scelerisque lorem. Mauris sollicitudin lobortis tempus. Ut et ligula vitae lorem laoreet <br> sagittis eu faucibus ligula. Aliquam egestas efficitur massa id convallis. Vestibulum vitae augue ante. Vestibulum ante ipsum<br> primis in faucibus orci luctus et ultrices posuere cubilia curae; Suspendisse eros est, malesuada vitae</p><br>
+
+       <p> Tincidunt nec elit. Fusce vel lectus finibus, laoreet turpis et, porta dui. Etiam tincidunt volutpat lorem, vel aliquet ante <br> ornare eget. In ullamcorper urna ullamcorper, ultrices nisi ut, auctor nunc. Aliquam egestas elit quam, eget dignissim nisl <br> pulvinar blandit. Praesent venenatis maximus lorem, at tristique nunc dignissim tristique. Nullam aliquet elit lorem, ac<br> finibus urna sollicitudin sed.</p>
+
+    </div>
+    
+</body><br><br><br>
+<footer>
+    <div class="footer-container">
+      <div class="left-section2">
+        <p>© 2024 Kobi Katılım Dijital</p>
+        <div class="social-icons">
+          <a href="#"><i class="fa fa-facebook"></i></a>
+          <a href="#"><i class="fa fa-twitter"></i></a>
+          <a href="#"><i class="fa fa-instagram"></i></a>
+          <a href="#"><i class="fa fa-linkedin"></i></a>
+          <a href="#"><i class="fa fa-youtube"></i></a>
+        </div>
+      </div>
+      
+      <div class="center-section">
+        <a href="#">Ücret ve Limitler</a>
+        <a href="#">Yasal Bilgilendirmeler</a>
+        <a href="#">SSS</a>
+        <a href="#">Gizlilik</a>
+      </div>
+      
+      <div class="right-section2">
+        <p>Müşteri Hizmetleri</p>
+        <p class="phone-number">0850 242 54 84</p>
+      </div>
+    </div>
+  </footer>
+
+</html>
